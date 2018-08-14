@@ -1,11 +1,10 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 //Models
-var Product = require('./models/product');
-var Wishlist = require('./models/wishlist');
+const Product = require('./models/product');
+const Wishlist = require('./models/wishlist');
 
 // Routers
 const products = require('./routes/api/product');
@@ -19,6 +18,7 @@ mongoose.connect(db, {useNewUrlParser: true})
   .then(() => console.log('MongoDB connected...'))
   .catch(err => console.log(err))
 
+const app = express();
 
 //Middleware
 app.use(bodyParser.json());
